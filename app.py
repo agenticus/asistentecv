@@ -6,20 +6,15 @@ descripcion = 'Descripción'
 pregunta_defult = 'pregunta default'
 
 #Importar librerias
-#from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Pinecone
 from langchain.prompts import PromptTemplate 
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
-#from langchain_community.document_loaders import PDFPlumberLoader
-#from langchain_core.documents.base import Document
 import gradio as gr
 import os
-#from dotenv import load_dotenv
 
 #Definir variables programáticas
-openai_api_key = os.getenv('OPENAI_API_KEY')
 embeddin_model = OpenAIEmbeddings()
 vectorstore = Pinecone.from_existing_index("asistentecv", embeddin_model)
 template1 = """
@@ -49,8 +44,8 @@ template2 = """
 template = template1 + template2
 
 #Elementos de la cadena langchain
-llm = ChatOpenAI(model="gpt-3.5-turbo-1106", temperature=0, openai_api_key=openai_api_key)
-##Instanciamos el retreaver que recuperará los documentos similares a la consulta del usuario
+llm = ChatOpenAI(model="gpt-3.5-turbo-1106", temperature=0, openai_api_key=os.getenv('OPENAI_API_KEY'))
+#Instanciamos el retreaver que recuperará los documentos similares a la consulta del usuario
 retriever = vectorstore.as_retriever()
 prompt = PromptTemplate.from_template(template)
 #Crear chain
