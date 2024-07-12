@@ -28,7 +28,7 @@ template1 = """
             (3) Debajo de tu respuesta, por favor lista todas las fuentes citadas (ejemplo: un párrafo donde se sustenta tu respuesta)
 
         Piensa paso a paso.
-        ###.format(nombre_apellido)
+        ###
 
         Responde la siguiente pregunta utilizando el contexto brindado.""".format(nombre_apellido)
         
