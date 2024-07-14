@@ -18,10 +18,9 @@ Esta es una aplicación RAG opensource construida con el API de OpenAI para el L
 
 Hemos publicado un video de YouTube donde se detallan las instrucciones para que cualquier persona pueda implementar este proyecto:
 
-<img src="doc/MINIATURA.JPEG" align="center">
+<img src="doc/MINIATURA.jpeg" align="center">
 
 ![](doc/youtube_icon.png) <a href="https://www.youtube.com/watch?v=nYBfLauP1SE">Tutorial</a>
-
 
 ---
 
